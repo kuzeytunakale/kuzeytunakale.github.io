@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuzey Tuna Kale</title>
+    <script>
+        function sifre() {
+            var password = prompt("Lütfen şifrenizi girin:");
+            if (password === "BEN KUZEY.") {
+                
+                alert("Hoş geldiniz!");
+            } else {
+                // Şifre yanlışsa erişimi engelle
+                alert("Hatalı şifre! Erişim engellendi.");
+                window.location.href = "about:blank";
+            }
+
+            
+        }
+    </script>
+</head>
+<body onload="sifre()">
+    <h1>Kuzey</h1>
+    <p>Buraya tıklıyarak giriş yapabilirsiniz<br></p>
+
+    <button id="btn">YAZDIR</button>
+    <div id="kutu"></div>
+    
+    <script>
+        function Yazdir(){
+            document.getElementById("kutu").innerHTML="www.yazilimkodlama.com";
+        }
+        
+        var btnYaz=document.getElementById("btn");
+        btnYaz.onclick=Yazdir;
+    </script>
+    GGGGGG
+    <a href="https://doodles.google/doodle/doodle-champion-island-games-begin/">
+        <button>Tıkla</button>
+    </a>
+</body>
+</html>
