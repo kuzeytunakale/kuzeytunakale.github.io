@@ -20,25 +20,51 @@
             
         }
     </script>
+    <script>
+  function startLoading() {
+    var i = 1;
+    var interval = setInterval(function() {
+      if(i <= 100) {
+        document.getElementById('loading').textContent = i + "/100";
+        i++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 70);
+  }
+</script>
+
 </head>
 <body onload="sifre()">
     <h1>Kuzey</h1>
     <p>Buraya tıklıyarak giriş yapabilirsiniz<br></p>
 
-    <button id="btn">YAZDIR</button>
+    <button id="btn">TIKLA</button>
+    <br>
+    <br>
     <div id="kutu"></div>
-    
+    <br>
+    <a id="tikla" href="https://doodles.google/doodle/doodle-champion-island-games-begin/"></a>
     <script>
         function Yazdir(){
-            document.getElementById("kutu").innerHTML="www.yazilimkodlama.com";
+            var i = 1;
+            var interval = setInterval(function() {
+            if(i <= 100) {
+                document.getElementById("kutu").textContent = i + "/100";
+                i++;
+            } else {
+	    	document.getElementById("tikla").textContent = "Tıkla";
+            clearInterval(interval);
+            }
+        }, 70);
+            
+            
         }
         
         var btnYaz=document.getElementById("btn");
         btnYaz.onclick=Yazdir;
+ 	
     </script>
-    GGGGGG
-    <a href="https://doodles.google/doodle/doodle-champion-island-games-begin/">
-        <button>Tıkla</button>
-    </a>
+    
 </body>
 </html>
