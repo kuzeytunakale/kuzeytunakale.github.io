@@ -22,21 +22,7 @@
             
         }
     </script>
-    <script>
-  function startLoading() {
-    var i = 1;
-    var interval = setInterval(function() {
-      if(i <= 100) {
-        document.getElementById('loading').textContent = i + "/100";
-        i++;
-      } else {
-        clearInterval(interval);
-      }
-    }, 70);
-  }
-</script>
-
-</head>
+ </head>
 <body onload="sifre()">
     <h1>Kuzey</h1>
     <p>Buraya tıklıyarak giriş yapabilirsiniz<br></p>
@@ -59,8 +45,6 @@
             clearInterval(interval);
             }
         }, 70);
-            
-            
         }
         
         var btnYaz=document.getElementById("btn");
