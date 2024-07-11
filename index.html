@@ -7,6 +7,14 @@
     <meta name="description" content="Bu site Kuzey Tuna Kale tarafından yapılmıştır. Kuzey, kuzey, Tuna, tuna, Kale, kale, KUZEY, TUNA, KALE, Kuzey Tuna, kuzey tuna, Kuzey Tuna Kale, kuzey tuna kale">
     <meta name="keywords" content="Kuzey, kuzey, Tuna, tuna, Kale, kale, KUZEY, TUNA, KALE, Kuzey Tuna, kuzey tuna, Kuzey Tuna Kale, kuzey tuna kale">
     <title>Kuzey Tuna Kale</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20% auto;
+            font-size: 2em;
+        }
+    </style>
     <script>
         function sifre() {
             var password = prompt("Lütfen şifrenizi girin:");
@@ -25,31 +33,39 @@
  </head>
 <body onload="sifre()">
     <h1>Kuzey</h1>
-    <p>Buraya tıklıyarak giriş yapabilirsiniz<br></p>
-
-    <button id="btn">TIKLA</button>
-    <br>
-    <br>
-    <div id="kutu"></div>
-    <br>
-    <a id="tikla" href="https://doodles.google/doodle/doodle-champion-island-games-begin/"></a>
+	
+    <div id="clock"></div>
+    <div id="date"></div>
     <script>
-        function Yazdir(){
-            var i = 1;
-            var interval = setInterval(function() {
-            if(i <= 100) {
-                document.getElementById("kutu").textContent = i + "/100";
-                i++;
-            } else {
-	    	document.getElementById("tikla").textContent = "Tıkla";
-            clearInterval(interval);
-            }
-        }, 70);
+        function updateClock() {
+            var options = {
+                timeZone: 'Europe/Istanbul',
+                hour12: false,
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric'
+            };
+
+            var formatter = new Intl.DateTimeFormat('tr-TR', options);
+            var currentTime = formatter.format(new Date());
+            document.getElementById('clock').textContent = currentTime;
+
+            var dateOptions = {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric'
+            };
+
+            var dateFormatter = new Intl.DateTimeFormat('tr-TR', dateOptions);
+            var currentDate = dateFormatter.format(new Date());
+            document.getElementById('date').textContent = currentDate;
         }
-        
-        var btnYaz=document.getElementById("btn");
-        btnYaz.onclick=Yazdir;
- 	
+
+        // Her saniye saat ve tarihi güncellemek için setInterval kullanıyoruz
+        setInterval(updateClock, 1000);
+
+        // Sayfa yüklendiğinde saatı ve tarihi ilk kez güncelliyoruz
+        updateClock();
     </script>
     
 </body>
