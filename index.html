@@ -14,14 +14,66 @@
             text-align: center;
             margin: 20% auto;
             font-size: 2em;
+	}
+	.button-container {
+            text-align: center;
+            margin-top: 20px;
         }
+	#content {
+	    display: flex;
+	    flex-direction: column; /* Elemanları dikey olarak sıralamak için */
+	    justify-content: center; /* Dikeyde ortalamak için */
+	    align-items: center; /* Yatayda ortalamak için */
+	    height: 100vh; /* Tam ekran yüksekliği */
+	    width: 100vw; /* Tam ekran genişliği */
+	    position: fixed; /* Sabit pozisyon */
+	    top: 0;
+	    left: 0;
+	}
+
+
+	#clock, #date, #buton {
+	    margin: 0px;
+	}
+
+	:fullscreen {
+  	    background: black;
+	}	
     </style>
  </head>
 <body bgcolor="Black" style="color:white">
-    
+    <div id="content">
     <h1><big><div id="clock"></div></big></h1>
     
     <h1><big><div id="date"></div></big></h1>
+    <div id="buton" class="button-container">
+    <button onclick="toggleFullScreen()">Tam Ekran Yap</button>
+    </div>
+    </div>
+
+    
+
+    <script>
+    function toggleFullScreen() {
+      var elem = document.getElementById("content");
+      var button = document.querySelector("#buton button");
+      if (!document.fullscreenElement) {
+        if (elem.requestFullscreen) {
+	  elem.requestFullscreen();
+	  button.textContent = "Tam Ekrandan Çık";
+          
+	  
+        }
+      } else {
+        if (document.exitFullscreen) {
+	  
+          document.exitFullscreen();
+	  button.textContent = "Tam Ekran Yap";
+	  
+        }
+      }
+    }
+    </script>
     <script>
         function updateClock() {
             var options = {
