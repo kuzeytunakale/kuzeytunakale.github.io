@@ -8,99 +8,11 @@
     <meta name="keywords" content="Kuzey, kuzey, Tuna, tuna, Kale, kale, KUZEY, TUNA, KALE, Kuzey Tuna, kuzey tuna, Kuzey Tuna Kale, kuzey tuna kale">
     <title>Kuzey Tuna Kale</title>
     <link rel="website icon" type="jpg" href="https://kuzeytunakale.github.io/ktk.jpg">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 20% auto;
-            font-size: 2em;
-	}
-	.button-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-	#content {
-	    display: flex;
-	    flex-direction: column;
-	    justify-content: center;
-	    align-items: center;
-	    height: 100vh;
-	    width: 100vw;
-	    position: fixed;
-	    top: 0;
-	    left: 0;
-	}
-	
-	#clock, #date, #buton {
-	    margin: 1px;
-	}
-
-	:fullscreen {
-  	    background: black;
-	}	
-    </style>
  </head>
-<body bgcolor="Black" style="color:white">
-    <div id="content">
-    <h1><big><div id="clock"></div></big></h1>
-    
-    <h1><big><div id="date"></div></big></h1>
-    <div id="buton" class="button-container">
-    <button onclick="toggleFullScreen()">Tam Ekran Yap</button>
-    </div>
-    </div>
-    <script>
-    function toggleFullScreen() {
-      var elem = document.getElementById("content");
-      var button = document.querySelector("#buton button");
-      if (!document.fullscreenElement) {
-        if (elem.requestFullscreen) {
-	  elem.requestFullscreen();
-	  button.textContent = "Tam Ekrandan Çık";
-          
-	  
-        }
-      } else {
-        if (document.exitFullscreen) {
-	  
-          document.exitFullscreen();
-	  button.textContent = "Tam Ekran Yap";
-	  
-        }
-      }
-    }
-    </script>
-    <script>
-        function updateClock() {
-            var options = {
-                timeZone: 'Europe/Istanbul',
-                hour12: false,
-                hour: 'numeric',
-                minute: 'numeric',
-                second: 'numeric'
-            };
+<body>
+	<a href="https://hits.seeyoufarm.com">
+  <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fkuzeytunakale.github.io&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/>
+</a>
 
-            var formatter = new Intl.DateTimeFormat('tr-TR', options);
-            var currentTime = formatter.format(new Date());
-            document.getElementById('clock').textContent = currentTime;
-
-            var dateOptions = {
-                day: '2-digit',
-                month: '2-digit',
-                year: 'numeric'
-            };
-
-            var dateFormatter = new Intl.DateTimeFormat('tr-TR', dateOptions);
-            var currentDate = dateFormatter.format(new Date());
-            document.getElementById('date').textContent = currentDate;
-        }
-
-        
-        setInterval(updateClock, 1000);
-
-        
-        updateClock();
-    </script>
-    <br>
 </body>
 </html>
