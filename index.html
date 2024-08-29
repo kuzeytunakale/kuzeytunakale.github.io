@@ -29,7 +29,7 @@
     .then(response => response.json())
     .then(data => {
       const visits = data.record.visits + 1;
-      document.foot.innerHTML += `<p><small>Bu sayfa ${visits} kez ziyaret edildi.</small></p>`;
+      document.body.innerHTML += `<p><small>Bu sayfa ${visits} kez ziyaret edildi.</small></p>`;
       return fetch(url, {
         method: 'PUT',
         headers: {
