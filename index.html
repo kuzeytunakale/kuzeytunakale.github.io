@@ -27,7 +27,8 @@
     .then(response => response.json())
     .then(data => {
       const visits = data.record.visits + 1;
-      document.body.innerHTML += `<p><small>Bu sayfa 29/08/2024 14.41 tarihinden itibaren ${visits} kez ziyaret edildi.</small></p>`;
+      document.getElementById("1112123").innerHTML = `<p><small>Bu sayfa 29/08/2024 14.41 tarihinden itibaren ${visits} kez ziyaret edildi.</small></p>`
+      
       return fetch(url, {
         method: 'PUT',
         headers: {
