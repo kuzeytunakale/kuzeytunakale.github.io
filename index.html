@@ -26,15 +26,7 @@
     .then(response => response.json())
     .then(data => {
       const visits = data.record.visits + 1;
-      const counter = document.createElement('div');
-      counter.style.position = 'fixed';
-      counter.style.bottom = '0';
-      counter.style.width = '100%';
-      counter.style.textAlign = 'center';
-      counter.style.backgroundColor = '#f1f1f1';
-      counter.style.padding = '10px';
-      counter.innerHTML = `Bu sayfa ${visits} kez ziyaret edildi.`;
-      document.body.appendChild(counter);
+      document.body.innerHTML += `<p>Bu sayfa ${visits} kez ziyaret edildi.</p>`;
       return fetch(url, {
         method: 'PUT',
         headers: {
@@ -47,8 +39,4 @@
     .catch(error => console.error('Error:', error));
 </script>
 </body>
-
-<foot>
-<div></div>
-</foot>
 </html>
