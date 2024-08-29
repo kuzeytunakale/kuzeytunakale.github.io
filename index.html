@@ -12,9 +12,10 @@
 <body>
 	<p>Bu web sitesi bir kök dizindir.</p>
 
-	<a href="https://g.co/doodle/v4zrdhh">
-		<button>Oyun için tıkla</button>
+	<a href="https://kuzeytunakale.github.io/saat">
+		<button>Saat için tıkla!</button>
 	</a>
+	
 <script>
   const binId = '66d085c8ad19ca34f89cd6c4';
   const url = `https://api.jsonbin.io/v3/b/${binId}`;
@@ -26,7 +27,7 @@
     .then(response => response.json())
     .then(data => {
       const visits = data.record.visits + 1;
-      document.body.innerHTML += `<p>Bu sayfa ${visits} kez ziyaret edildi.</p>`;
+      document.body.innerHTML += `<p><small>Bu sayfa 29/08/2024 14.41 tarihinden itibaren ${visits} kez ziyaret edildi.</small></p>`;
       return fetch(url, {
         method: 'PUT',
         headers: {
