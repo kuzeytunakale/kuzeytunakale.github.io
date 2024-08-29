@@ -15,6 +15,8 @@
 	<a href="https://kuzeytunakale.github.io/saat">
 		<button>Saat için tıkla!</button>
 	</a>
+	<br>
+	<div id="1">Ziyaretçi sayıları yükleniyor...</div>
 	
 <script>
   const binId = '66d085c8ad19ca34f89cd6c4';
@@ -27,7 +29,7 @@
     .then(response => response.json())
     .then(data => {
       const visits = data.record.visits + 1;
-      document.getElementById("1112123").innerHTML = `<p><small>Bu sayfa 29/08/2024 14.41 tarihinden itibaren ${visits} kez ziyaret edildi.</small></p>`
+      document.getElementById("1").innerHTML = `<p><small>Bu sayfa 29/08/2024 14.41 tarihinden itibaren ${visits} kez ziyaret edildi.</small></p>`
       
       return fetch(url, {
         method: 'PUT',
