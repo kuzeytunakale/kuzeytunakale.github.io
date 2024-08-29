@@ -15,9 +15,6 @@
 	<a href="https://g.co/doodle/v4zrdhh">
 		<button>Oyun için tıkla</button>
 	</a>
-</body>
-
-<foot>
 <script>
   const binId = '66d085c8ad19ca34f89cd6c4';
   const url = `https://api.jsonbin.io/v3/b/${binId}`;
@@ -29,7 +26,15 @@
     .then(response => response.json())
     .then(data => {
       const visits = data.record.visits + 1;
-      document.body.innerHTML += `<p><small>Bu sayfa ${visits} kez ziyaret edildi.</small></p>`;
+      const counter = document.createElement('div');
+      counter.style.position = 'fixed';
+      counter.style.bottom = '0';
+      counter.style.width = '100%';
+      counter.style.textAlign = 'center';
+      counter.style.backgroundColor = '#f1f1f1';
+      counter.style.padding = '10px';
+      counter.innerHTML = `Bu sayfa ${visits} kez ziyaret edildi.`;
+      document.body.appendChild(counter);
       return fetch(url, {
         method: 'PUT',
         headers: {
@@ -41,6 +46,9 @@
     })
     .catch(error => console.error('Error:', error));
 </script>
+</body>
 
+<foot>
+<div></div>
 </foot>
 </html>
