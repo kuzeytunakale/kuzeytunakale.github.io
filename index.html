@@ -16,11 +16,29 @@
 		<button>Oyun için tıkla</button>
 	</a>
 
-	<script id="_wau32f">
-  	  var _wau = _wau || [];
-  	  _wau.push(["tab", "5c330mutke", "32f", "bottom-right"]);
-	</script>
-	<script async src="//waust.at/t.js"></script>
+<script>
+  const binId = '66d085c8ad19ca34f89cd6c4';
+  const url = `https://api.jsonbin.io/v3/b/${binId}`;
+  const headers = {
+    'X-Master-Key': '$2a$10$d3o3VAfw45VawULn4vao6.cEZzvTM87JUcqTIzqKjwLUguG1bZTLO'
+  };
+
+  fetch(url, { headers })
+    .then(response => response.json())
+    .then(data => {
+      const visits = data.record.visits + 1;
+      document.body.innerHTML += `<p>Bu sayfa ${visits} kez ziyaret edildi.</p>`;
+      return fetch(url, {
+        method: 'PUT',
+        headers: {
+          ...headers,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ visits })
+      });
+    })
+    .catch(error => console.error('Error:', error));
+</script>
 
 </body>
 </html>
