@@ -2,13 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://kuzeytunakale.github.io/</loc>
-    <lastmod>2024-09-13</lastmod>
+    <lastmod>2024-12-12</lastmod>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://kuzeytunakale.github.io/saat/</loc>
-    <lastmod>2024-09-07</lastmod>
+    <lastmod>2024-10-10</lastmod>
+    <changefreq>always</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://kuzeytunakale.github.io/baba/</loc>
+    <lastmod>2025-01-01</lastmod>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
   </url>
