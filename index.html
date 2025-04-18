@@ -21,15 +21,11 @@ background-color: #7df9ff
 	<p>Merhaba ben <mark><strong>Kuzey Tuna Kale</strong></mark></p>
 	<p>Bu site tümüyle yazılım ve bilim için çalışmaktadır, ama şu an tam olarak çalışmamaktadır.</p>
 
-<nav class="navbar bg-body-tertiary">
+<nav class="navbar sticky-top bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-      Bootstrap
-    </a>
+    <a class="navbar-brand" href="#">Sticky top</a>
   </div>
 </nav>
-	
 
 	<a href="https://kuzeytunakale.github.io/saat">
 		<button type="button" class="btn btn-success">Saat için tıkla!</button>
@@ -45,32 +41,6 @@ background-color: #7df9ff
 	<a href = "https://kuzeytunakale.github.io/www">
 		<button> Gereksiz şeyler </button>
 	</a>
-	<br>
-	<div id="1"><p><small>Ziyaretçi sayıları yükleniyor...</small></p></div>
-	
-<script>
-  const binId = '66d085c8ad19ca34f89cd6c4';
-  const url = `https://api.jsonbin.io/v3/b/${binId}`;
-  const headers = {
-    'X-Master-Key': '6666'
-  };
 
-  fetch(url, { headers })
-    .then(response => response.json())
-    .then(data => {
-      const visits = data.record.visits + 1;
-      document.getElementById("1").innerHTML = `<p><small>Bu sayfa 29/08/2024 14.41 tarihinden itibaren ${visits} kez ziyaret edildi.</small></p>`
-      
-      return fetch(url, {
-        method: 'PUT',
-        headers: {
-          ...headers,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ visits })
-      });
-    })
-    .catch(error => console.error('Error:', error));
-</script>
 </body>
 </html>
