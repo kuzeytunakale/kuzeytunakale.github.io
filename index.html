@@ -1,94 +1,222 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Kuzey Tuna Kale - Kuzey Tuna Kale'nin sitesi.">
-<meta name="keywords" content="Kuzey Tuna Kale, Kuzey, Tuna, Kale, Kuzey Tuna">
-   
-  <title>Kuzey Tuna Kale</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Kuzey Tuna Kale - Orta Dünya esintili kişisel sayfa." />
+  <title>Kuzey Tuna Kale — Orta Dünya'ya Hoş Geldin</title>
 
-  <!-- Bootstrap -->
+  <!-- Google Font (hafif antik his için) -->
+  <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap (opsiyonel, buton-stilleri için) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
-  
-  <!-- Favicon -->
-  <link rel="icon" href="https://kuzeytunakale.github.io/ktk.jpg" type="image/jpeg">
 
   <style>
-    body {
-      background-color: #e0f7ff;
-      text-align: center;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      font-family: "Poppins", sans-serif;
+    :root{
+      --bg-start: #e6f7ea;   /* sol üst hafif yeşil */
+      --bg-end:   #fff7e0;   /* sağ alt sıcak krem */
+      --accent:   #b8860b;   /* altın/bronze */
+      --accent-dark: #8a6402;
+      --leaf:     #2f7a3a;   /* Orta Dünya yeşili */
+      --card-bg:  rgba(255,255,255,0.9);
     }
 
+    html,body{
+      height:100%;
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 60%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:2rem;
+      color:#1b2b1b;
+    }
+
+    /* Header banner */
+    .banner {
+      width:100%;
+      max-width:960px;
+      margin:0 auto 1.25rem;
+      text-align:center;
+      position:relative;
+    }
+    .title {
+      display:inline-flex;
+      align-items:center;
+      gap:.9rem;
+      padding:.75rem 1.25rem;
+      border-radius:999px;
+      background: linear-gradient(90deg, rgba(255,250,230,0.95), rgba(255,245,210,0.9));
+      box-shadow: 0 6px 18px rgba(27,43,27,0.08);
+      border: 1px solid rgba(138,100,2,0.08);
+    }
+    .ring {
+      width:44px;
+      height:44px;
+      flex:0 0 44px;
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+      background: radial-gradient(circle at 35% 30%, rgba(255,245,200,0.95), rgba(200,160,60,0.15));
+      box-shadow: 0 2px 8px rgba(138,100,2,0.12), inset 0 1px 0 rgba(255,255,255,0.6);
+      border:2px solid rgba(184,134,11,0.18);
+    }
+    .title h1{
+      margin:0;
+      font-family: "Uncial Antiqua", serif;
+      font-size:1.35rem;
+      color:var(--accent-dark);
+      line-height:1;
+    }
+    .title p {
+      margin:0;
+      font-size:.85rem;
+      color:#355036;
+      font-weight:500;
+      opacity:.9;
+    }
+
+    /* Card */
     .profile-card {
-      background: white;
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-      padding: 2rem;
-      max-width: 400px;
-      transition: transform 0.2s;
-      animation: fadeIn 1s ease-in-out;
+      width:100%;
+      max-width:520px;
+      background: var(--card-bg);
+      border-radius:16px;
+      padding:1.6rem;
+      box-shadow: 0 10px 30px rgba(27,43,27,0.08);
+      border: 1px solid rgba(27,43,27,0.04);
+      text-align:center;
+      animation: floatIn .9s ease both;
     }
 
-    .profile-card:hover {
-      transform: translateY(-5px);
+    .profile-card h2{
+      margin:.2rem 0 .6rem;
+      font-size:1.45rem;
+      color:var(--leaf);
     }
 
-    .profile-img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      margin-bottom: 1rem;
-      border: 3px solid #7df9ff;
+    .lead-quote {
+      margin:0 0 1rem;
+      color:#374832;
+      font-style: italic;
+      opacity:.95;
     }
 
-    .btn {
-      margin: 0.3rem;
-      transition: transform 0.2s, box-shadow 0.2s;
+    .controls {
+      display:flex;
+      flex-wrap:wrap;
+      gap:.5rem .6rem;
+      justify-content:center;
+      margin-top:.9rem;
     }
 
-    .btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    .btn-theme {
+      min-width:120px;
+      padding:.55rem .8rem;
+      border-radius:12px;
+      font-weight:600;
+      box-shadow: 0 6px 16px rgba(46,60,25,0.06);
+      transition: transform .14s ease, box-shadow .14s ease;
+      border: none;
+    }
+    .btn-theme:active{ transform: translateY(1px); }
+
+    .btn-gold {
+      background: linear-gradient(180deg, var(--accent), var(--accent-dark));
+      color:#fff;
+      box-shadow: 0 6px 18px rgba(138,100,2,0.18);
+    }
+    .btn-gold:hover{
+      transform: translateY(-3px) scale(1.02);
     }
 
-    footer {
-      margin-top: 2rem;
-      font-size: 0.9rem;
+    .btn-green {
+      background: linear-gradient(180deg, #3b8a52, #2f7a3a);
+      color:#fff;
+    }
+    .btn-green:hover{
+      transform: translateY(-3px) scale(1.02);
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+    .btn-brown {
+      background: linear-gradient(180deg, #8b5e34, #6e4728);
+      color:#fff;
+    }
+    .btn-brown:hover{
+      transform: translateY(-3px) scale(1.02);
+    }
+
+    .subtle {
+      margin-top:1rem;
+      font-size:.9rem;
+      color:#4a5a40;
+    }
+
+    footer{
+      margin-top:1.25rem;
+      text-align:center;
+      font-size:.85rem;
+      color:#4a5a40;
+    }
+
+    @keyframes floatIn {
+      from { opacity:0; transform: translateY(8px); }
+      to   { opacity:1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width:560px){
+      .title h1{ font-size:1.1rem; }
+      .profile-card{ padding:1.25rem; }
+      .btn-theme{ min-width:100px; padding:.5rem .6rem; }
     }
   </style>
 </head>
 <body>
 
-  <div class="profile-card">
-    <img src="https://kuzeytunakale.github.io/ktk.jpg" alt="Kuzey Tuna Kale" class="profile-img">
-    <p>Merhaba ben <mark><strong>Kuzey Tuna Kale</strong></mark></p> <p>Bu site tümüyle yazılım ve bilim için çalışmaktadır, ama şu an tam olarak çalışmamaktadır.</p>
-    <div>
-      <a href="https://kuzeytunakale.github.io/saat" class="btn btn-success">Saat</a>
-      <a href="https://kuzeytunakale.github.io/baba" class="btn btn-secondary">Yılbaşı</a>
-      <a href="https://kuzeytunakale.github.io/www" class="btn btn-warning">Okul</a>
-      <a href="https://kuzeytunakale.github.io/lordoftherings" class="btn btn-info">Yüzüklerin Efendisi</a>
+  <div class="banner" role="banner" aria-hidden="false">
+    <div class="title" role="heading" aria-level="1">
+      <div class="ring" aria-hidden="true">
+        <!-- Basit yüzük-ikon (SVG) -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="7.2" stroke="#5a3e0f" stroke-width="1.6" />
+          <circle cx="12" cy="12" r="2.6" fill="#cfa24a" stroke="#7a5614" stroke-width=".6" />
+        </svg>
+      </div>
+      <div>
+        <h1>Kuzey Tuna Kale</h1>
+        <p>Orta Dünya'ya Hoş Geldin</p>
+      </div>
     </div>
   </div>
 
-  <footer>
-    <p>Bu siteye kaç kişi girdi?</p>
-    <img src="https://visitor-badge.laobi.icu/badge?page_id=kuzeytunakale.github.io" alt="Ziyaretçi sayacı">
-  </footer>
+  <main class="profile-card" role="main" aria-label="Kuzey Tuna Kale profili">
+    <h2><strong>Kuzey Tuna Kale</strong></h2>
 
-  <!-- Bootstrap JS -->
+    <p class="lead-quote">“Bir yüzük hepsine hükmedecek, bir yüzük hepsine bulacak...”</p>
+
+    <p>Yazılım ve bilim meraklısı. Burada projelerimi ve ilgi alanlarımı paylaşıyorum.</p>
+
+    <div class="controls" role="navigation" aria-label="Bağlantılar">
+      <a class="btn-theme btn-gold" href="https://kuzeytunakale.github.io/saat">Saat</a>
+      <a class="btn-theme btn-green" href="https://kuzeytunakale.github.io/baba">Yılbaşı</a>
+      <a class="btn-theme btn-brown" href="https://kuzeytunakale.github.io/www">Okul</a>
+      <a class="btn-theme btn-brown" href="https://kuzeytunakale.github.io/lordoftherings">Yüzüklerin Efendisi</a>
+    </div>
+
+    <p class="subtle">Temaya hafif dokunuş — sade, hızlı ve mobil uyumlu.</p>
+
+    <footer>
+      <p>Bu siteye kaç kişi girdi?</p>
+      <img src="https://visitor-badge.laobi.icu/badge?page_id=kuzeytunakale.github.io" alt="Ziyaretçi sayacı">
+    </footer>
+  </main>
+
+  <!-- Bootstrap JS (isteğe bağlı) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
