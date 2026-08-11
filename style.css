@@ -343,7 +343,33 @@ section {
     align-self: flex-start;
     margin-top: 10px;
 }
+/* Şakalar Bölümü (Görsel Izgarası) */
+.jokes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    align-items: start; /* Farklı yükseklikteki görsellerin doğal hizalanması için */
+}
 
+.joke-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.joke-card:hover {
+    border-color: var(--accent-green);
+    transform: translateY(-4px);
+    box-shadow: 0 4px 20px rgba(74, 222, 128, 0.1);
+}
+
+.joke-card img {
+    width: 100%;
+    height: auto; /* Görselin kendi orjinal en-boy oranını korur */
+    display: block;
+}
 footer {
     text-align: center;
     padding: 30px 0;
