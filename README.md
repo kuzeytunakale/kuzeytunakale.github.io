@@ -1,1 +1,1 @@
-MERHABA BEN KUZEY.
+Bu Repo bir github pages web sitesi içindir. Site benim (Ben tuna) içindir 
