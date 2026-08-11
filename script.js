@@ -7,3 +7,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+const textToType = "yazılım geliştirici.";
+const typewriterElement = document.getElementById("typewriter");
+let charIndex = 0;
+
+function typeEffect() {
+    if (charIndex < textToType.length) {
+        typewriterElement.textContent += textToType.charAt(charIndex);
+        charIndex++;
+        setTimeout(typeEffect, 100); // Yazma hızı (100ms = 0.1 saniye)
+    }
+}
+
+// Sayfa yüklendiğinde yazma efektini başlat
+document.addEventListener("DOMContentLoaded", typeEffect);
