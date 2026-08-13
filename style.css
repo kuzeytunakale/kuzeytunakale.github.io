@@ -370,6 +370,47 @@ section {
     height: auto; /* Görselin kendi orjinal en-boy oranını korur */
     display: block;
 }
+/* Önemli Fotolar Grid Yapısı */
+.photos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.photo-card {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.photo-card:hover {
+    transform: translateY(-4px);
+    border-color: #64ffda; /* Sitedeki vurgu rengine göre değiştirebilirsin */
+}
+
+/* style.css içindeki bu kısmı bulun ve değiştirin */
+
+.photo-card img {
+    width: 100%;
+    /* Sabit yükseklik yerine auto kullanıyoruz */
+    height: auto; 
+    /* cover yerine contain kullanarak resmin tamamını gösteriyoruz */
+    object-fit: contain; 
+    display: block;
+    /* Eğer resim contain ile küçük kalırsa, arka plan rengi verebilirsin */
+    /* background-color: #0a192f;  Sitenin koyu arka plan rengi */
+}
+
+.photo-caption {
+    padding: 0.8rem;
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: #8892b0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
 footer {
     text-align: center;
     padding: 30px 0;
